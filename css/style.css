@@ -1,0 +1,215 @@
+/* Importação de fonte, se necessário */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --color-dark: #121212;
+    --color-green: #37c77d;
+    --color-light: #ffffff;
+    --color-text-subtle: #a1a1a1;
+    --color-linear-gradient-start: #0b5f1a;
+    --color-linear-gradient-end: #000F03;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    line-height: 1.6;
+}
+
+/* ====================================
+   ESTILOS DO CABEÇALHO
+   ==================================== */
+
+   .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-image: linear-gradient(
+        to right, 
+        var(--color-linear-gradient-start),
+        var(--color-linear-gradient-end),
+        var(--color-linear-gradient-end)
+    );
+}
+
+.logo {
+
+    height: 30px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li a {
+    color: var(--color-light);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+    transition: color 0.3s;
+    font-weight: 700;
+}
+
+.navbar ul li a:hover {
+    color: var(--color-green);
+}
+
+.auth-buttons a {
+    text-decoration: none;
+    padding: 8px 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btn-login {
+    color: var(--color-green);
+    border: 1px solid transparent;
+    font-weight: 700
+}
+
+.btn-signup {
+    background-color: var(--color-green);
+    color: var(--color-dark);
+    font-weight: bold;
+}
+
+
+/* ====================================
+   ESTILOS DA SEÇÃO PRINCIPAL (HERO)
+   ==================================== */
+
+.hero-section {
+    background-image: url('../imagens/tela de fundo.png');
+    background-size: cover;
+    background-position: center;
+    height: 70vh; /* Altura para a seção principal */
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    position: relative;
+    /* Camada escura sobre a imagem */
+    z-index: 1;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Escurece o fundo para o texto se destacar */
+    z-index: -1;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 2;
+}
+
+.text-content {
+    max-width: 500px;
+}
+
+.text-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.text-content p {
+    font-size: 1.2em;
+    color: var(--color-text-subtle);
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-green);
+    color: var(--color-dark);
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #2da467;
+}
+
+.illustration-content {
+    max-width: 400px;
+}
+
+.illustration-content .illustration {
+    width: 100%;
+    height: auto;
+}
+
+
+/* ====================================
+   ESTILOS DA SEÇÃO DE GUIA/RECURSOS
+   ==================================== */
+
+.guide-section {
+    background-color: #1a1a1a;
+    padding: 80px 50px;
+    text-align: center;
+}
+
+.guide-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 400px;
+    margin: 0 0 20px auto; /* Alinha o passo à direita, como no layout */
+}
+
+.step-number {
+    display: inline-block;
+    background-color: var(--color-green);
+    color: var(--color-dark);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 15px;
+    flex-shrink: 0; /* Impede que o número diminua */
+}
+
+.step-details h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.step-details p {
+    color: var(--color-text-subtle);
+    font-size: 0.95em;
+}
