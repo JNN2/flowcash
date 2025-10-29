@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --dark-bg: #1e1e1e;
+    --dark-card: #2c2c2c;
+    --dark-text: #f0f0f0;
+    --dark-subtext: #aaaaaa;
+    --flowcash-green: #38b44a;
+    --flowcash-red: #da3333;
+    --header-bg-green: #1a361a;
+    --color-linear-gradient-start: #0b5f1a;
+    --color-linear-gradient-end: #000F03;
+    --color-linear-gradient-middle: #003300;
+    --neon-green: #39ff14; /* Verde vibrante/neon para receitas */
+    --red-alert: #ff4141; /* Vermelho para despesas */
+    --text-light: #f0f0f0; /* Texto claro principal */
+    --divider-color: #333; /* Cor da linha divisória vertical */
+}
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+    min-height: 100vh;
+}
+/* --- Cabeçalho Principal (header e navbars) --- */
+.header {
+    width: 100%;
+    background-image: linear-gradient(
+        to right,
+        var(--color-linear-gradient-end),
+        var(--color-linear-gradient-end),
+        var(--color-linear-gradient-start)
+    );
+    }
+.navbars {
+    display: flex;
+    justify-content: space-between; /* Espalha logo, links e ícones */
+    align-items: center;
+    padding: 15px 30px;
+}
+.logo {
+    height: 30px; /* Ajuste o tamanho da sua logo */
+}
+.navbars ul {
+    list-style: none; /* Remove os pontos da lista */
+    display: flex; /* Coloca os links na horizontal */
+    gap: 25px; /* Espaço entre os links */
+    flex-grow: 1; /* Permite que a lista ocupe espaço para centralização */
+    justify-content: center; /* Centraliza os links no espaço disponível */
+}
+.nav-item a {
+    text-decoration: none;
+    color: var(--dark-text); /* Cor do texto para links normais */
+    font-weight: 700;
+    padding-bottom: 5px; 
+    transition: color 0.2s, border-bottom 0.2s;
+    display: block; /* Garante que o padding e a borda funcionem bem */
+}
+.nav-item.active a {
+    color: var(--flowcash-green); /* Verde vibrante para o link ativo */
+    border-bottom: 2px solid var(--flowcash-green); /* Borda verde abaixo */
+    font-weight: bold;
+}
+.nav-icons .icon-btn {
+    background: none; /* Remove a cor de fundo cinza padrão do botão */
+    border: none;    /* Remove as bordas do botão */
+    padding: 0;
+    margin-left: 15px; /* Espaçamento entre os botões */
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.nav-icons .icon-btn:hover {
+    opacity: 0.8; /* Efeito de opacidade ao passar o mouse */
+}
+.nav-icons .icon-btn img {
+    height: 24px; /* Tamanho do ícone (ajuste conforme necessário) */
+    width: 24px;
+    vertical-align: middle; /* Ajuda a alinhar o ícone com o texto da nav */
+}
+
+/* --- Dashboard (Conteúdo Principal) --- */
+/* --- Dashboard (Conteúdo Principal) --- */
+.dashboard {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Card Row Five (Ajuste para alinhamento vertical no centro) --- */
+.card-row-five {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* ALINHA TUDO VERTICALMENTE NO CENTRO */
+    height: 150px;
+    background-image: linear-gradient(
+        to right,
+        var(--color-linear-gradient-end),
+        var(--color-linear-gradient-end),
+        var(--color-linear-gradient-start),
+        var(--color-linear-gradient-end),
+        var(--color-linear-gradient-end)
+    );
+    border-radius: 8px; /* Adiciona cantos arredondados, se for o caso */
+    padding-left: 20px; /* Padding no container principal */
+}
+
+/* --- Coluna 1: Saudação e Valores (Esquerda) --- */
+.card-saudacao-valores {
+    flex-grow: 1; /* Ocupa o espaço restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Garante que os filhos estejam alinhados */
+    flex-basis: auto; /* Deixa o flex-grow dominar */
+}
+
+/* Saudação: Ajuste de quebra de linha (se quiser o nome em linha diferente) */
+.saudacao h2 {
+    font-size: 1.2rem;
+    margin: 0 0 15px 0; /* Ajusta a margem para baixo */
+    font-weight: normal;
+    padding-left: 0; /* Remove o padding do CSS anterior */
+}
+
+.saudacao strong {
+    font-weight: bold;
+}
+
+/* Container de Receitas/Despesas */
+.valores-container {
+    display: flex;
+    width: 100%;
+    /* margin-bottom: 0; */
+}
+
+/* Receitas: Remove o padding direito que não é mais necessário */
+.receitas-item {
+    flex: 0,8;
+    padding-right: 80px;
+}
+.value-text {
+    color: var(--red-alert);
+    font-weight: 700;
+}
+.value-text-two {
+    color: var(--neon-green);
+    font-weight: 700;
+}
+
+/* Despesas: Não precisa mais da linha aqui, pois ela vai para o container de ações */
+.despesas-item {
+    flex: 1;
+    border-left: 1px solid var(--neon-green);
+    /* Linha divisória foi removida daqui! */
+    padding-left: 50px; 
+    padding-right: 10px;
+}
+
+.receitas-item p, .despesas-item p {
+    margin: 0 0 5px 0;
+    font-size: 0.9rem;
+    opacity: 0.8; /* Para deixar o texto "Receitas do mês atual" mais suave */
+}
+.card-acoes-container {
+    display: flex;
+    align-items: center; 
+    gap: 15px; /* Espaçamento entre os botões */
+    padding-right: 20px; 
+    height: 100%; /* Ocupa a altura total do card-row-five */
+}
+
+/* --- Estilo dos Botões de Ação Grandes --- */
+.card-acao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Remover fundo e borda padrão */
+    background: none; 
+    border: none;
+    cursor: pointer;
+    /* Dimensionamento e Estilo do Card (Ícone grande) */
+    width: 150px;
+    height: 1500px; /* Altura do Card */
+    
+}
+
+/* Estilo do Círculo e Ícone */
+.card-acao img {
+    height: 115px;
+    margin-bottom: 5px; /* Espaçamento entre o ícone e o texto */
+    /* Assumindo que as imagens são SVGs que permitem mudar a cor do preenchimento/traço */
+}
+.card-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Divide em duas colunas iguais */
+    gap: 30px; /* Espaçamento entre os cards (vertical e horizontal) */
+    margin-top: 30px; /* Espaço após o card-row-five */
+}
+.card-padrao {
+    background-image: linear-gradient(
+        to right,
+        var(--color-linear-gradient-end),
+        var(--color-linear-gradient-middle),
+        var(--color-linear-gradient-start)
+    );
+    background-color: #232323; /* Cor de fallback */
+    padding: 20px;
+    border-radius: 8px; /* Cantos arredondados */
+    height: 150px; /* Altura fixa para manter o alinhamento */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empurra o h3 para cima e o p para baixo */
+}
+
+.card-padrao h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text-light, #ffffff); /* Título em branco/claro */
+    margin: 0;
+}
+
+.card-info {
+    font-size: 0.9rem;
+    color: var(--text-muted, #aaa); /* Texto de informação em cor mais suave */
+    margin: 0;
+}
+.card-saldo-geral {
+    position: relative; 
+    display: flex;
+    flex-direction: column; /* coloca o título acima do valor */
+    justify-content: center;
+    background-image: linear-gradient(to right, 
+        var(--color-linear-gradient-end),
+        var(--color-linear-gradient-middle),
+        var(--color-linear-gradient-start),
+        var(--color-linear-gradient-middle),
+        var(--color-linear-gradient-end)
+    );
+    border-radius: 8px;
+    margin-top: 30px; 
+    padding: 20px 30px;
+    min-height: 90px;
+}
+
+/* Linha verde à esquerda */
+.card-line-left {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 70%;
+    background-color:var(--neon-green);
+    border-radius: 2px;
+}
+
+/* Título “Saldo Geral” */
+.card-saldo-geral h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--dark-text);
+    margin: 0 0 10px 20px; /* espaço da esquerda */
+}
+
+/* Grupo da direita (R$ 0,00 + olho) */
+.saldo-right-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px; /* espaço entre o valor e o olho */
+    margin-left: 20px;
+}
+
+/* Valor do saldo */
+.saldo-value {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color:var(--neon-green);
+    margin: 0;
+}
+
+/* Ícone de olho */
+.eye-icon {
+    font-size: 1.2rem;
+    color: var(--neon-green);
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.eye-icon:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Quando o saldo estiver escondido */
+.hidden-saldo {
+    filter: blur(5px);
+}
+
+/* Quando o olho estiver ativo (saldo oculto) */
+.eye-icon.active {
+    color: var(--flowcash-red); /* vermelho para indicar “oculto” */
+    transform: scale(1.1);
+}

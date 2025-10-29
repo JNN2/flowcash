@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* Importa a fonte "Poppins" do Google Fonts */
+
+* {
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove espaçamentos internos padrão */
+  box-sizing: border-box; /* Inclui bordas no cálculo de tamanho */
+  font-family: "Poppins", sans-serif; /* Define a fonte padrão */
+}
+
+body {
+  height: 100vh; /* Ocupa toda a altura da tela */
+  display: flex; /* Usa flexbox para centralizar */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  background:#101110; /* Fundo em degradê preto e verde escuro */
+}
+
+.logo {
+  display: block;          /* faz a imagem ocupar uma linha inteira */
+  margin: auto;     /* centraliza e adiciona espaço abaixo */
+  width: 280px;            /* tamanho da logo (ajuste se quiser maior/menor) */
+  height: auto;            /* mantém a proporção da imagem */
+}
+
+.container {
+  display: flex; /* Centraliza o conteúdo dentro do container */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.login-box {
+  background: linear-gradient(180deg, #0a0a0a, #003300); /* Fundo da caixa com degradê escuro */
+  padding: 40px; /* Espaço interno */
+  border-radius: 15px; /* Cantos arredondados */
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2); /* Sombra verde suave */
+  text-align: center; /* Centraliza o texto */
+  width: 350px; /* Largura fixa */
+}
+
+.logo {
+  color: white;
+  font-size: 2em; /* Tamanho da fonte */
+  font-weight: 700; /* Negrito */
+  letter-spacing: 2px; /* Espaço entre letras */
+  margin-bottom: 25px; /* Espaço abaixo */
+}
+
+h2 {
+  color: white;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+/* === LOGIN SOCIAL === */
+.social-login {
+  display: flex;
+  flex-direction: column; /* Botões um abaixo do outro */
+  gap: 10px; /* Espaço entre eles */
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Espaço entre ícone e texto */
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 10px;
+  background: #111; /* Fundo preto */
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s; /* Animação suave no hover */
+}
+
+.social-btn:hover {
+  background: #1a1a1a; /* Fica um pouco mais claro ao passar o mouse */
+}
+
+.social-btn img {
+  width: 20px;
+  height: 20px; /* Tamanho dos ícones */
+}
+
+/* === DIVISÓRIA "OU" === */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #00ff66;
+  margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #00ff66; /* Linhas verdes nas laterais */
+}
+
+.divider:not(:empty)::before {
+  margin-right: 10px;
+}
+
+.divider:not(:empty)::after {
+  margin-left: 10px;
+}
+
+/* === FORMULÁRIO === */
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+label {
+  color: white;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #0f0f0f;
+  color: white;
+  margin-top: 5px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #00ff66; /* Fica verde quando clicado */
+  outline: none;
+}
+
+/* === CAMPO DE SENHA COM BOTÃO (OLHINHO) === */
+.password-wrapper {
+  position: relative; /* Permite posicionar o botão dentro */
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  padding-right: 44px; /* Espaço pro botão do olho */
+}
+
+.toggle-pass {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.06);
+  height: 36px;
+  width: 36px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #00ff66;
+  transition: background 0.15s, transform 0.06s;
+}
+
+.toggle-pass:hover {
+  background: rgba(0,0,0,0.35);
+  transform: translateY(-50%) scale(1.02);
+}
+
+.toggle-pass:active {
+  transform: translateY(-50%) scale(0.98);
+}
+
+.toggle-pass svg {
+  fill: #00ff66;
+}
+
+.toggle-pass[aria-pressed="true"] {
+  background: rgba(255,255,255,0.06);
+}
+
+/* === LINKS COM CHECKBOX === */
+.links {
+  text-align: left; /* Alinha à esquerda */
+  margin-top: 5px;
+  font-size: 0.85em;
+}
+
+/* Checkbox e texto alinhados lado a lado */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Espaço entre a caixinha e o texto */
+}
+
+/* Estilo do link dentro do texto */
+.checkbox-label a {
+  color: #00ff66;
+  text-decoration: none;
+}
+
+.checkbox-label a:hover {
+  text-decoration: underline;
+}
+
+/* Ajuste opcional do tamanho do checkbox */
+.checkbox-label input[type="checkbox"] {
+  width: 12px;
+  height: 16px;
+}
+
+
+/* === BOTÃO "ENTRAR" === */
+.btn-login {
+  background: #00ff66;
+  color: black;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 15px;
+}
+
+.btn-login:hover {
+  background: #00cc55; /* Escurece um pouco ao passar o mouse */
+}
+
+/* === SEÇÃO DE CADASTRO === */
+.register {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+
+.btn-register {
+  border: 1px solid #00ff66;
+  background: transparent;
+  color: #00ff66;
+  border-radius: 8px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-register:hover {
+  background: #00ff66;
+  color: black;
+}
+
+
+
+

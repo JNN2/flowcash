@@ -33,7 +33,7 @@ body {
     align-items: center;
     padding: 20px 50px;
     background-image: linear-gradient(
-        to right, 
+        to right,
         var(--color-linear-gradient-start),
         var(--color-linear-gradient-end),
         var(--color-linear-gradient-end)

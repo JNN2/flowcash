@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowCash Dashboard</title>
+    <link rel="stylesheet" href="/css/inicio_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbars"> <img src="/imagens/flowcash.png" alt="Logo Flowcash" class="logo">
+            <ul>
+                <li class="nav-item active"><a href="#">visão geral</a></li>
+                <li class="nav-item"><a href="#">lançamentos</a></li>
+                <li class="nav-item"><a href="#">relatorios</a></li>
+                <li class="nav-item"><a href="#">limites de gastos</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="icon-btn" onclick="abrirNotificacoes()">
+                    <img src="/imagens/notificação.png" alt="Notificações">
+                </button>
+                
+                <button class="icon-btn" onclick="abrirConfiguracoes()">
+                    <img src="/imagens/configuração.png" alt="Configurações">
+                </button>
+                
+                <button class="icon-btn" onclick="abrirPerfil()">
+                    <img src="/imagens/perfil.png" alt="Perfil">
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main class="dashboard">
+        <section class="overview-cards">
+            <div class="card-row-five">
+    
+                <div class="card-saudacao-valores">
+                    <div class="saudacao">
+                        <h2>Boa tarde, <br><strong>Bolsonaro</strong></h2> 
+                    </div>
+                    
+                    <div class="valores-container">
+                        <div class="receitas-item">
+                            <p>Receitas do mês atual</p>
+                            <p class="value-text">R$ 0,00</p>
+                        </div>
+    
+                        <div class="despesas-item"> 
+                            <p>Despesas do mês atual</p>
+                            <p class="value-text-two">R$ 0,00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-acoes-container">
+                    
+                    <button class="card-acao receita" onclick="adicionarReceitas()">
+                        <img src="/imagens/receitas.png" alt="Receitas">
+                    </button>
+                    
+                    <button class="card-acao despesa" onclick="adicionarDespesas()">
+                        <img src="/imagens/despesas.png" alt="Despesas">
+                    </button>
+                    
+                    <button class="card-acao relatorio" onclick="abrirRelatorio()">
+                        <img src="/imagens/relatorio.png" alt="Relatorios">
+                    
+                    </button>
+                </div>
+            </div>
+            <div class="card-row">
+                <div class="card-padrao">
+                    <h3>Contas a pagar</h3>
+                    <p class="card-info">No momento você não possui nenhuma conta a pagar</p>
+                </div>
+            
+                <div class="card-padrao">
+                    <h3>Maiores gastos no mês atual</h3>
+                    <p class="card-info">Sem gasto no período</p>
+                </div>
+            
+                <div class="card-padrao">
+                    <h3>Contas a receber</h3>
+                    <p class="card-info">Você não possui contas pendente a receber</p>
+                </div>
+            
+                <div class="card-padrao">
+                    <h3>Limite de gastos de Outubro</h3>
+                    <p class="card-info">Nenhum limite de gasto definido para o período</p>
+                </div>
+            </div>
+            <div class="card-saldo-geral">
+                <div class="card-line-left"></div>
+                    <h3>Saldo Geral</h3>
+                <div class="saldo-right-group">
+                    <p class="saldo-value" id="saldoDisplay">R$ 0,00</p> 
+                    <span class="eye-icon fa-stack" id="toggleSaldo">
+                        <i class="fa-solid fa-eye"></i> 
+                    </span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="/js/inicio_script.js"></script>
+</body>
+</html>
