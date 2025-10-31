@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FlowCash — Lançamentos</title>
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/lançamentos_style.css">
+
+  <!-- Font Awesome (opcional) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="header">
+    <nav class="navbars">
+      <div class="nav-left">
+        <img src="/imagens/flowcash.png" alt="FlowCash" class="logo">
+      </div>
+
+      <ul class="nav-center">
+        <li><a href="#" class="nav-link"> Visão geral </a></li>
+        <li><a href="#" class="nav-link active">Lançamentos</a></li>
+        <li><a href="#" class="nav-link">Relatórios</a></li>
+        <li><a href="#" class="nav-link">Limites de gastos</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button class="icon-btn" title="Notificações" onclick="abrirNotificacoes()">
+          <img src="/imagens/notificação.png" alt="notificações">
+        </button>
+        <button class="icon-btn" title="Configurações" onclick="abrirConfiguracoes()">
+          <img src="/imagens/configuração.png" alt="configurações">
+        </button>
+        <button class="icon-btn profile-btn" title="Perfil" onclick="abrirConfiguracoes()">
+          <img src="/imagens/perfil.png" alt="perfil">
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main-area">
+    <section class="container">
+      <div class="card lancamentos-card">
+
+        <!-- TOPO DO CARD -->
+        <div class="card-top">
+
+          <!-- TÍTULO À ESQUERDA -->
+          <div class="title-area">
+            <h2 class="card-title">Lançamentos</h2>
+            <button class="btn-add" title="Adicionar lançamento" onclick="adicionarLançamento()">
+              <img src="/imagens/adicionar-1-10.png" alt="Adicionar">
+            </button>
+          </div>
+
+          <!-- MÊS CENTRALIZADO -->
+          <div class="month-area" aria-hidden="false">
+            <div class="Octoberarrows">
+            <button class="month-arrow" id="prevMonth" title="Mês anterior" onclick="mesAnterior()">
+              <img src="/imagens/angulo-pequeno-direito-10.png" alt="anterior">
+            </button>
+            
+            <div class="month-label" id="monthLabel">Outubro 2025</div>
+
+            <button class="month-arrow" id="nextMonth" title="Próximo mês" onclick="mesSeguinte()">
+              <img src="/imagens/angulo-pequeno-direito-20.png" alt="próximo">
+            </button>
+            </div>
+
+            <!-- ÍCONES À DIREITA -->
+            <div class="right-icons">
+              <button class="icon-square" title="Trocar conta" onclick="trocarConta()">
+                <img src="/imagens/exchange-alt-10.png" alt="exchange">
+              </button>
+              <button class="icon-square" title="Mais opções" onclick="maisOpções()">
+                <img src="/imagens/menu-pontos-vertical-10.png" alt="menu">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- FILTRO -->
+        <div class="filter-area">
+          <img src="/imagens/filtro-de-barras-10.png" alt="filtro" class="filter-icon">
+          <input type="text" class="filter-input" placeholder="Filtrar por..." id="filterInput">
+        </div>
+
+        <!-- CORPO DO CARD -->
+        <div class="card-body">
+          <div class="empty-state">
+            <img src="/imagens/informacoes-10.png" alt="info" class="info-icon">
+            <p class="empty-text">Nenhuma movimentação no período</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/lançamentos_script.js"></script>
+</body>
+</html>
