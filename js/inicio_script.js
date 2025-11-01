@@ -28,8 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            // Se o link levar para uma URL real, remova o e.preventDefault()
-            e.preventDefault(); 
             
             // Remove a classe 'active' de todos os itens
             document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
@@ -38,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.target.parentElement.classList.add('active');
             
             // Lógica de Redirecionamento (exemplo)
-            // window.location.href = e.target.href; 
+            // window.location.href = e.target.href;
         });
     });
 });

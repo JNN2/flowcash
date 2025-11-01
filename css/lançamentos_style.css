@@ -1,6 +1,6 @@
 /* ========== VARIÁVEIS ========== */
 :root{
-  --bg:#111111;
+  --bg:#1e1e1e;
   --header-green:#113317;
   --accent-green:#27C24C;
   --card-grad-start:#062012;
@@ -10,6 +10,11 @@
   --text:#e9eee8;
   --radius:12px;
   --glass: rgba(255,255,255,0.03);
+  --dark-text: #f0f0f0;
+  --flowcash-green: #38b44a;
+  --color-linear-gradient-start: #0b5f1a;
+  --color-linear-gradient-end: #000F03;
+  --color-linear-gradient-middle: #003300;
 }
 
 /* ===== RESET ===== */
@@ -18,19 +23,60 @@ html,body{height:100%}
 body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 
 /* ===== NAVBAR ===== */
-.header{width:100%;background:linear-gradient(90deg,var(--card-grad-end),var(--header-green));box-shadow:0 2px 0 rgba(0,0,0,0.6)}
-.navbars{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;gap:20px}
-.logo{height:36px;display:block}
-
-.nav-center{list-style:none;display:flex;gap:26px;align-items:center;flex:1;justify-content:center;padding-left:10px}
-.nav-center .nav-link{color:var(--muted);text-decoration:none;font-weight:600;text-transform:lowercase;letter-spacing:0.2px;padding:8px 6px;border-radius:6px}
-.nav-center .nav-link:hover{color:var(--text);opacity:0.95}
-.nav-center .nav-link.active{color:var(--accent-green);border-bottom:3px solid rgba(39,194,76,0.12);padding-bottom:6px}
-
-.nav-right{display:flex;align-items:center;gap:12px}
-.icon-btn{background:transparent;border:none;padding:6px;border-radius:8px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
-.icon-btn img{width:22px;height:22px;display:block;filter:grayscale(0.1) contrast(0.9)}
-.icon-btn:hover{background:rgba(255,255,255,0.02)}
+.header {
+    width: 100%;
+    background-image: linear-gradient(
+        to right,
+        var(--color-linear-gradient-end),
+        var(--color-linear-gradient-middle),
+        var(--color-linear-gradient-start)
+    );
+    }
+.navbars {
+    display: flex;
+    justify-content: space-between; /* Espalha logo, links e ícones */
+    align-items: center;
+    padding: 15px 30px;
+}
+.logo {
+    height: 30px; /* Ajuste o tamanho da sua logo */
+}
+.navbars ul {
+    list-style: none; /* Remove os pontos da lista */
+    display: flex; /* Coloca os links na horizontal */
+    gap: 25px; /* Espaço entre os links */
+    flex-grow: 1; /* Permite que a lista ocupe espaço para centralização */
+    justify-content: center; /* Centraliza os links no espaço disponível */
+}
+.nav-item a {
+    text-decoration: none;
+    color: var(--dark-text); /* Cor do texto para links normais */
+    font-weight: 700;
+    padding-bottom: 5px; 
+    transition: color 0.2s, border-bottom 0.2s;
+    display: block; /* Garante que o padding e a borda funcionem bem */
+}
+.nav-item.active a {
+    color: var(--flowcash-green); /* Verde vibrante para o link ativo */
+    border-bottom: 2px solid var(--flowcash-green); /* Borda verde abaixo */
+    font-weight: bold;
+}
+.nav-icons .icon-btn {
+    background: none; /* Remove a cor de fundo cinza padrão do botão */
+    border: none;    /* Remove as bordas do botão */
+    padding: 0;
+    margin-left: 15px; /* Espaçamento entre os botões */
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.nav-icons .icon-btn:hover {
+    opacity: 0.8; /* Efeito de opacidade ao passar o mouse */
+}
+.nav-icons .icon-btn img {
+    height: 24px; /* Tamanho do ícone (ajuste conforme necessário) */
+    width: 24px;
+    vertical-align: middle; /* Ajuda a alinhar o ícone com o texto da nav */
+}
 
 /* ===== MAIN ===== */
 .main-area{padding:32px 18px}

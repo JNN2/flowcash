@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+/* ===== VARIÁVEIS DE CORES ===== */
 :root {
     --dark-bg: #1e1e1e;
     --dark-card: #2c2c2c;
@@ -18,15 +18,19 @@
 }
 /* Reset Básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:'Poppins',sans-serif;
 }
+html,body{
+    height:100%;
+}
+
 body {
     background-color: var(--dark-bg);
     color: var(--dark-text);
-    min-height: 100vh;
+    -webkit-font-smoothing:antialiased
 }
 /* --- Cabeçalho Principal (header e navbars) --- */
 .header {
@@ -34,7 +38,7 @@ body {
     background-image: linear-gradient(
         to right,
         var(--color-linear-gradient-end),
-        var(--color-linear-gradient-end),
+        var(--color-linear-gradient-middle),
         var(--color-linear-gradient-start)
     );
     }
@@ -84,7 +88,6 @@ body {
     vertical-align: middle; /* Ajuda a alinhar o ícone com o texto da nav */
 }
 
-/* --- Dashboard (Conteúdo Principal) --- */
 /* --- Dashboard (Conteúdo Principal) --- */
 .dashboard {
     padding: 20px;

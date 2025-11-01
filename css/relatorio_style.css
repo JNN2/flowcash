@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+/* ===== VARIÁVEIS DE CORES ===== */
+:root {
+    --dark-bg: #1e1e1e;
+    --dark-card: #2c2c2c;
+    --dark-text: #f0f0f0;
+    --dark-subtext: #aaaaaa;
+    --flowcash-green: #38b44a;
+    --flowcash-red: #da3333;
+    --header-bg-green: #1a361a;
+    --color-linear-gradient-start: #0b5f1a;
+    --color-linear-gradient-end: #000F03;
+    --color-linear-gradient-middle: #003300;
+    --neon-green: #39ff14; /* Verde vibrante/neon para receitas */
+    --red-alert: #ff4141; /* Vermelho para despesas */
+    --text-light: #f0f0f0; /* Texto claro principal */
+    --divider-color: #333; /* Cor da linha divisória vertical */
+}
+/* Reset Básico */
+* {
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:'Poppins',sans-serif;
+}
+html,body{
+    height:100%;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+    -webkit-font-smoothing:antialiased
+}
+/* --- Cabeçalho Principal (header e navbars) --- */
+.header {
+    width: 100%;
+    background-image: linear-gradient(
+        to right,
+        var(--color-linear-gradient-end),
+        var(--color-linear-gradient-middle),
+        var(--color-linear-gradient-start)
+    );
+    }
+.navbars {
+    display: flex;
+    justify-content: space-between; /* Espalha logo, links e ícones */
+    align-items: center;
+    padding: 15px 30px;
+}
+.logo {
+    height: 30px; /* Ajuste o tamanho da sua logo */
+}
+.navbars ul {
+    list-style: none; /* Remove os pontos da lista */
+    display: flex; /* Coloca os links na horizontal */
+    gap: 25px; /* Espaço entre os links */
+    flex-grow: 1; /* Permite que a lista ocupe espaço para centralização */
+    justify-content: center; /* Centraliza os links no espaço disponível */
+}
+.nav-item a {
+    text-decoration: none;
+    color: var(--dark-text); /* Cor do texto para links normais */
+    font-weight: 700;
+    padding-bottom: 5px; 
+    transition: color 0.2s, border-bottom 0.2s;
+    display: block; /* Garante que o padding e a borda funcionem bem */
+}
+.nav-item.active a {
+    color: var(--flowcash-green); /* Verde vibrante para o link ativo */
+    border-bottom: 2px solid var(--flowcash-green); /* Borda verde abaixo */
+    font-weight: bold;
+}
+.nav-icons .icon-btn {
+    background: none; /* Remove a cor de fundo cinza padrão do botão */
+    border: none;    /* Remove as bordas do botão */
+    padding: 0;
+    margin-left: 15px; /* Espaçamento entre os botões */
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.nav-icons .icon-btn:hover {
+    opacity: 0.8; /* Efeito de opacidade ao passar o mouse */
+}
+.nav-icons .icon-btn img {
+    height: 24px; /* Tamanho do ícone (ajuste conforme necessário) */
+    width: 24px;
+    vertical-align: middle; /* Ajuda a alinhar o ícone com o texto da nav */
+}
